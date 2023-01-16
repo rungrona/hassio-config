@@ -1,0 +1,14 @@
+- platform: generic_thermostat
+  name: Kjellerstue
+  heater: switch.kjellerstue_varme
+  target_sensor: sensor.kjellerstue_rct_temperatur
+  min_temp: 10
+  max_temp: 28
+  target_temp: 20
+  min_cycle_duration: 
+    minutes: 15
+  keep_alive:
+    minutes: 30
+  cold_tolerance: 0.5
+  hot_tolerance: 0.2
+  precision: 1.0

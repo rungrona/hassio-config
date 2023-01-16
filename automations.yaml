@@ -1,0 +1,700 @@
+- id: '1612968502621'
+  alias: Lys Vindfang og WC
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      no_motion_wait: '1200'
+      motion_entity: binary_sensor.bevegelse_home_security_motion_detection
+      light_target:
+        area_id: vindfang
+- id: '1613397080324'
+  alias: Verktøybod dør åpen
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 32f7ae6205a76f8e2f460f73b3797522
+    entity_id: binary_sensor.door_opening_sensor_any
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 67d62aef5c3b523441491472e56cbed1
+    entity_id: light.verktoybod
+    domain: light
+    brightness_pct: 50
+  mode: single
+- id: '1613397119424'
+  alias: Verktøybod dør lukket
+  description: ''
+  trigger:
+  - type: turned_off
+    platform: device
+    device_id: 32f7ae6205a76f8e2f460f73b3797522
+    entity_id: binary_sensor.door_opening_sensor_any
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 67d62aef5c3b523441491472e56cbed1
+    entity_id: light.verktoybod
+    domain: light
+  mode: single
+- id: '1614155627927'
+  alias: Skru på utelys ved solnedgang
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
+  condition: []
+  action:
+  - scene: scene.utelys_normal
+  mode: single
+- id: '1614155706845'
+  alias: Skru av utelys ved soloppgang
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:30:00
+  condition: []
+  action:
+  - scene: scene.utelys_av
+  mode: single
+- id: '1615131536734'
+  alias: Lys PÅ i Vindfang
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.motion_sensor_home_security_motion_detection
+      light_target:
+        area_id:
+        - vindfang
+        - toalett
+      no_motion_wait: 1800
+- id: '1615531819259'
+  alias: Ny automasjon
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: a497d0cf17b64f7e5b6f851d6d776dfc
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5238199_Bryter_Gang_off
+  condition: []
+  action:
+  - scene: scene.stue_alt_av
+  - scene: scene.kjokken_av
+  mode: single
+- id: '1615550688017'
+  alias: Utelys Nord PÅ med bryter
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0ed3d1466f0be7c59ca94e699e51c5c
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5361964_Bryter_Kjellergang_venstre__on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: a12d55c9cc04b7c16b6908d0761e0e08
+    entity_id: light.spot_1_skrivebord
+    domain: light
+    brightness_pct: 50
+  mode: single
+- id: '1615550774402'
+  alias: Utelys Nord AV med bryter
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0ed3d1466f0be7c59ca94e699e51c5c
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5361964_Bryter_Kjellergang_venstre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: a12d55c9cc04b7c16b6908d0761e0e08
+    entity_id: light.spot_1_skrivebord
+    domain: light
+  mode: single
+- id: '1615550896831'
+  alias: Utelys Nord RØD
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0ed3d1466f0be7c59ca94e699e51c5c
+    type: button_long_release
+    subtype: button_1
+    discovery_id: xcomfort_5361964_Bryter_Kjellergang_venstre__upReleased
+  condition: []
+  action:
+  - scene: scene.utelys_rod_50
+  mode: single
+- id: '1615550938815'
+  alias: Utelys Nord BLÅ
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0ed3d1466f0be7c59ca94e699e51c5c
+    type: button_long_release
+    subtype: button_2
+    discovery_id: xcomfort_5361964_Bryter_Kjellergang_venstre__downReleased
+  condition: []
+  action:
+  - scene: scene.utelys_bla
+  mode: single
+- id: '1616587748152'
+  alias: Utelys AV 02:00
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:00
+  condition: []
+  action:
+  - scene: scene.utelys_av
+  mode: single
+- id: '1638780964224'
+  alias: Skru av garderobelys etter 30 minutter
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: ced5f33650879b8c98704197b0ef50e7
+    entity_id: light.tradfri_panel
+    domain: light
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: ced5f33650879b8c98704197b0ef50e7
+    entity_id: light.tradfri_panel
+    domain: light
+  mode: single
+- id: '1638781475826'
+  alias: Verktøybod AV etter 10 minutter
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 67d62aef5c3b523441491472e56cbed1
+    entity_id: light.verktoybod
+    domain: light
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 67d62aef5c3b523441491472e56cbed1
+    entity_id: light.verktoybod
+    domain: light
+  mode: single
+- id: '1640168763049'
+  alias: Lys på i kjøkken ved bevegelse
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.bevegelse_kjokken_home_security_motion_detection_2
+      light_target:
+        area_id: 684382dadb9fc2ba0d09e4a7ecbdaffd
+      no_motion_wait: 300
+- id: '1643025866163'
+  alias: Oppvaskmaskin ferdig
+  description: ''
+  trigger:
+  - type: power
+    platform: device
+    device_id: f2303ead7cf17dc62f904d494986fad0
+    entity_id: sensor.oppvaskmaskin_power_2
+    domain: sensor
+    below: 2
+  condition: []
+  action:
+  - service: notify.mobile_app_ukjent
+    data:
+      message: Oppvaskmaskinen er ferdig
+      title: På tide å tømme oppvaskmaskinen
+  mode: single
+- id: '1643899558493'
+  alias: Skru av lys kontor om PC er av
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.l03422
+    to: home
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 0a32ae772f94aa41053c749880c792a6
+    entity_id: light.kontor_tak
+    domain: light
+  mode: single
+- id: '1647680927896'
+  alias: Skru på lys i trappegang
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: b8bb924ac3201d65b218063f8960374f
+    type: button_short_release
+    subtype: button_3
+    discovery_id: xcomfort_5361748_Bryter_Trapp_Midt_h_yre__on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 8312c1285683180badb56e009eb6e73e
+    entity_id: light.spot1_gang_trapp
+    domain: light
+    brightness_pct: 32
+  - type: turn_on
+    device_id: 82140dc25f52e2144055843afa0f0532
+    entity_id: light.spot2_gang_trapp
+    domain: light
+    brightness_pct: 32
+  mode: single
+- id: '1647681095405'
+  alias: Max lys i trapp
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: b8bb924ac3201d65b218063f8960374f
+    type: button_long_press
+    subtype: button_3
+    discovery_id: xcomfort_5361748_Bryter_Trapp_Midt_h_yre__upPressed
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 8312c1285683180badb56e009eb6e73e
+    entity_id: light.spot1_gang_trapp
+    domain: light
+    brightness_pct: 90
+  - type: turn_on
+    device_id: 82140dc25f52e2144055843afa0f0532
+    entity_id: light.spot2_gang_trapp
+    domain: light
+    brightness_pct: 90
+  mode: single
+- id: '1652572370439'
+  alias: PÅ Kjellerstue Spotter
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c91a269164be6892d0f6fec83fa1bc5b
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5361999_B_Kjellerstue_venstre__on
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.kjellerstue_slapp_av
+    metadata: {}
+  mode: single
+- id: '1652572547476'
+  alias: AV Kjellerstue Spotter
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c91a269164be6892d0f6fec83fa1bc5b
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5361999_B_Kjellerstue_venstre__off
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.skru_av_kjellerstue
+    metadata: {}
+  mode: single
+- id: '1665507551802'
+  alias: Skru AV i trappegang
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: b8bb924ac3201d65b218063f8960374f
+    type: button_short_release
+    subtype: button_4
+    discovery_id: xcomfort_5361748_Bryter_Trapp_Midt_h_yre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ed7fb335ca1c897d1787464cf601316d
+    entity_id: light.trappegang
+    domain: light
+  mode: single
+- id: '1666208635591'
+  alias: Soverom Rune AV
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 233c55a5cb21cc253cfa90dbdceb5503
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5361984_B_Seng_H_yre_venstre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 744e216215ef8338a5b5ae9a5d3fef32
+    entity_id: light.color_temperature_light_2
+    domain: light
+  mode: single
+- id: '1666208744534'
+  alias: Seng Olaug AV
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: f8f599919cbb687f3bbf2e3df57855fe
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5427223_B_Seng_Venstre_venstre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 1d1bbc0c1522d535212d0957b02ab250
+    entity_id: light.color_temperature_light_1
+    domain: light
+  mode: single
+- id: '1666208791213'
+  alias: Seng Olaug PÅ30
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: f8f599919cbb687f3bbf2e3df57855fe
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5427223_B_Seng_Venstre_venstre__on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 1d1bbc0c1522d535212d0957b02ab250
+    entity_id: light.color_temperature_light_1
+    domain: light
+    brightness_pct: 30
+  mode: single
+- id: '1666208858879'
+  alias: Seng Rune PÅ30
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 233c55a5cb21cc253cfa90dbdceb5503
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5361984_B_Seng_H_yre_venstre__on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 744e216215ef8338a5b5ae9a5d3fef32
+    entity_id: light.color_temperature_light_2
+    domain: light
+    brightness_pct: 30
+  mode: single
+- id: '1666208999336'
+  alias: Soverom AV
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 233c55a5cb21cc253cfa90dbdceb5503
+    type: button_short_release
+    subtype: button_4
+    discovery_id: xcomfort_5361984_B_Seng_H_yre_h_yre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ea28279880d50541d26ba5821654d91c
+    entity_id: light.hue_soverom
+    domain: light
+  mode: single
+- id: '1666209258731'
+  alias: Soverom PÅ Begge
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 233c55a5cb21cc253cfa90dbdceb5503
+    type: button_short_release
+    subtype: button_3
+    discovery_id: xcomfort_5361984_B_Seng_H_yre_h_yre__on
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.hue_soverom_slapp_av
+    metadata: {}
+  mode: single
+- id: '1666210203127'
+  alias: Slå AV Soverom HUE
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 56de2ccf3f2de47719e0d5d70b93d026
+    type: button_short_release
+    subtype: button_4
+    discovery_id: xcomfort_5361955_Bryter_Soverom1_h_yre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ea28279880d50541d26ba5821654d91c
+    entity_id: light.hue_soverom
+    domain: light
+  mode: single
+- id: '1666210243074'
+  alias: Soverom HUE PÅ
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 56de2ccf3f2de47719e0d5d70b93d026
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5361955_Bryter_Soverom1_venstre__on
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.hue_soverom_slapp_av
+    metadata: {}
+  mode: single
+- id: '1666210347873'
+  alias: Slå AV Hue Soverom
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 56de2ccf3f2de47719e0d5d70b93d026
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5361955_Bryter_Soverom1_venstre__off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ea28279880d50541d26ba5821654d91c
+    entity_id: light.hue_soverom
+    domain: light
+  mode: single
+- id: '1667383427467'
+  alias: Bevegelse i Carport
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: ca2e032e373bf66233c2b5bcaf7b23f0
+    entity_id: binary_sensor.carport_motion_2
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  action:
+  - type: turn_on
+    device_id: bf9a8104359b27d25a5e260718ece175
+    entity_id: switch.lys1_carport
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: bf9a8104359b27d25a5e260718ece175
+    entity_id: switch.lys1_carport
+    domain: switch
+  mode: single
+- id: '1668168509595'
+  alias: Kjellergang PÅ
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 0ca3ed6cb538ca807c3a6b009819413f
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5400922_Bryter_Trapp_Nederst_on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ab9f1d495182b515b74125d47b5dbf06
+    entity_id: light.kjellergang
+    domain: light
+    brightness_pct: 30
+  mode: single
+- id: '1668168537444'
+  alias: Kjellergang AV
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 0ca3ed6cb538ca807c3a6b009819413f
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5400922_Bryter_Trapp_Nederst_off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ab9f1d495182b515b74125d47b5dbf06
+    entity_id: light.kjellergang
+    domain: light
+  mode: single
+- id: '1668168646973'
+  alias: Kjellergang Lyst
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 0ca3ed6cb538ca807c3a6b009819413f
+    type: button_long_press
+    subtype: button_1
+    discovery_id: xcomfort_5400922_Bryter_Trapp_Nederst_upPressed
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ab9f1d495182b515b74125d47b5dbf06
+    entity_id: light.kjellergang
+    domain: light
+    brightness_pct: 80
+  mode: single
+- id: '1668718698431'
+  alias: Kontor Lyd PÅ
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c4b9fcc1cb55861eb61863326c11ed97
+    type: button_short_release
+    subtype: button_1
+    discovery_id: xcomfort_5477525_Kontorpult_on
+  condition: []
+  action:
+  - type: turn_on
+    device_id: efaca09f22839df754e46a4d147bac91
+    entity_id: switch.mikser_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - type: turn_on
+    device_id: 34ae2dda6dd4b014c5552f865f259394
+    entity_id: switch.hoyttaler_hoyre_2
+    domain: switch
+  - type: turn_on
+    device_id: 0f3244fc93939e61f3779a0bed99723e
+    entity_id: switch.hoyttaler_venstre_2
+    domain: switch
+  mode: single
+- id: '1668718816463'
+  alias: Kontor Lyd AV
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c4b9fcc1cb55861eb61863326c11ed97
+    type: button_short_release
+    subtype: button_2
+    discovery_id: xcomfort_5477525_Kontorpult_off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 34ae2dda6dd4b014c5552f865f259394
+    entity_id: switch.hoyttaler_hoyre_2
+    domain: switch
+  - type: turn_off
+    device_id: 0f3244fc93939e61f3779a0bed99723e
+    entity_id: switch.hoyttaler_venstre_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - type: turn_off
+    device_id: efaca09f22839df754e46a4d147bac91
+    entity_id: switch.mikser_2
+    domain: switch
+  mode: single
+- id: '1672594421185'
+  alias: Kjellerstue Lyst
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c91a269164be6892d0f6fec83fa1bc5b
+    type: button_long_press
+    subtype: button_1
+    discovery_id: xcomfort_5361999_B_Kjellerstue_venstre__upPressed
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.kjellerstue_lad_batteriene
+    metadata: {}
+  mode: single
+- id: '1673545565019'
+  alias: Vitrineskap på
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 06b54498da4001205f6e2b0ba9927869
+    entity_id: light.spisestue_tak
+    domain: light
+  condition:
+  - condition: time
+    after: '15:00:00'
+  action:
+  - type: turn_on
+    device_id: a758f523dabc5a8a46fc7b1bfde1f944
+    entity_id: switch.bak_sofa_2
+    domain: switch
+  mode: single
+- id: '1673545605482'
+  alias: Vitrineskap av
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 06b54498da4001205f6e2b0ba9927869
+    entity_id: light.spisestue_tak
+    domain: light
+  condition: []
+  action:
+  - type: turn_off
+    device_id: a758f523dabc5a8a46fc7b1bfde1f944
+    entity_id: switch.bak_sofa_2
+    domain: switch
+  mode: single

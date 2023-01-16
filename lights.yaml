@@ -1,0 +1,19 @@
+- platform: switch
+  name: Vaskerom Tak
+  entity_id: switch.vaskerom_tak
+  
+- platform: switch
+  name: Utelys Hage
+  entity_id: switch.ute_hage
+- platform: switch
+  name: Spotlight
+  entity_id: switch.videolys_current_value
+- platform: switch
+  name: Vitrine
+  entity_id: switch.stue_vitrine
+- platform: switch
+  name: Trinnlys
+  entity_id: switch.trinnlys_current_value
+- platform: switch
+  name: Stort Vindu
+  entity_id: switch.stuevindu_plugg_2

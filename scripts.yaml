@@ -1,0 +1,81 @@
+jobbelys:
+  alias: Jobbelys
+  sequence:
+  - type: turn_on
+    device_id: 3126909ef3d4b6cd6827fb05bf2af9fb
+    entity_id: light.julestjerne
+    domain: light
+    brightness_pct: 80
+  - type: turn_on
+    device_id: 2788355946cdb1a04a51b47bdfb0b44e
+    entity_id: light.hue_color_spot_5
+    domain: light
+    brightness_pct: 50
+    flash: short
+  - type: turn_on
+    device_id: a12d55c9cc04b7c16b6908d0761e0e08
+    entity_id: light.hue_color_spot_4
+    domain: light
+    brightness_pct: 50
+    flash: short
+  - type: turn_on
+    device_id: 6d9ae6cbf23c6f4e39d053eefb9ae91f
+    entity_id: light.hue_color_spot_1
+    domain: light
+    brightness_pct: 50
+    flash: short
+  - type: turn_on
+    device_id: bc4d4ee9f0c2e0f004cf35fe70d158fa
+    entity_id: light.hue_color_spot_2
+    domain: light
+    brightness_pct: 50
+    flash: short
+  - type: turn_on
+    device_id: 0c2296bbad7e3cc7417842691a701b1a
+    entity_id: light.hue_color_spot_3
+    domain: light
+    brightness_pct: 50
+    flash: short
+  mode: single
+lys_av_kjeller:
+  alias: Lys Av Kjeller
+  sequence:
+  - type: turn_off
+    device_id: a12d55c9cc04b7c16b6908d0761e0e08
+    entity_id: light.hue_color_spot_4
+    domain: light
+  - type: turn_off
+    device_id: 2788355946cdb1a04a51b47bdfb0b44e
+    entity_id: light.hue_color_spot_5
+    domain: light
+  - type: turn_off
+    device_id: 6d9ae6cbf23c6f4e39d053eefb9ae91f
+    entity_id: light.hue_color_spot_1
+    domain: light
+  - type: turn_off
+    device_id: bc4d4ee9f0c2e0f004cf35fe70d158fa
+    entity_id: light.hue_color_spot_2
+    domain: light
+  - type: turn_off
+    device_id: 0c2296bbad7e3cc7417842691a701b1a
+    entity_id: light.hue_color_spot_3
+    domain: light
+  - delay: '30'
+  - delay: '20'
+  - type: turn_off
+    device_id: d2e8c69707effb2a2259da53e1b54cd5
+    entity_id: switch.trinnlysned_switch
+    domain: switch
+  - type: turn_off
+    device_id: d7ade7ab0af65a5f7f53d505f446973e
+    entity_id: light.hue_color_lamp_2
+    domain: light
+  - type: turn_off
+    device_id: 9107d72a99dba99bb388176a533b32ce
+    entity_id: light.hue_color_lamp_1
+    domain: light
+  - type: turn_off
+    device_id: bb9e6dfc36feed2ef536a9919458c025
+    entity_id: light.hue_outdoor_wall_1
+    domain: light
+  mode: single

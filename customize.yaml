@@ -1,0 +1,24 @@
+sensor.kjellerstue_rct_temperatur:
+  unit_of_measurement: °C
+
+sensor.temperatur_verktoybod:
+  unit_of_measurement: °C
+
+sensor.temperatur_bad_oppe:
+  unit_of_measurement: °C
+
+sensor.temperatur_vindfang:
+  unit_of_measurement: °C
+
+sensor.temperatur_marius:
+  unit_of_measurement: °C
+
+sensor.temperatur_kontor:
+  unit_of_measurement: °C
+
+group.all_lights:
+  hidden: false
+
+sensor.energi:
+  state_class: total_increasing
+  device_class: energy

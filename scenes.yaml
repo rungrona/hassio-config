@@ -1,0 +1,822 @@
+- id: '1613457491996'
+  name: Kjellerstue Jobb Teams
+  entities:
+    light.kjellerstue_uplight:
+      brightness: 255
+      friendly_name: Uplight
+      supported_features: 1
+      state: 'on'
+    switch.videolys_current_value:
+      friendly_name: 'Videolys: Current value'
+      state: 'on'
+    light.spot_2_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 235
+      - 75.294
+      rgb_color:
+      - 63
+      - 79
+      - 255
+      xy_color:
+      - 0.158
+      - 0.087
+      effect: none
+      friendly_name: Skrivebord 1
+      supported_features: 63
+      state: 'on'
+    light.spot_3_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 235
+      - 75.294
+      rgb_color:
+      - 63
+      - 79
+      - 255
+      xy_color:
+      - 0.158
+      - 0.087
+      effect: none
+      friendly_name: Skrivebord 2
+      supported_features: 63
+      state: 'on'
+    light.spot_4_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 235
+      - 75.294
+      rgb_color:
+      - 63
+      - 79
+      - 255
+      xy_color:
+      - 0.158
+      - 0.087
+      effect: none
+      friendly_name: Skrivebord 3
+      supported_features: 63
+      state: 'on'
+    light.spot_5_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 235
+      - 75.294
+      rgb_color:
+      - 63
+      - 79
+      - 255
+      xy_color:
+      - 0.158
+      - 0.087
+      effect: none
+      friendly_name: Skrivebord 4
+      supported_features: 63
+      state: 'on'
+- id: '1613457609676'
+  name: Kjellerstue Jobb
+  entities:
+    light.kjellerstue_uplight:
+      brightness: 128
+      friendly_name: Uplight
+      supported_features: 1
+      state: 'on'
+    switch.videolys_current_value:
+      friendly_name: 'Videolys: Current value'
+      state: 'off'
+    light.spot_2_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 45
+      - 21.961
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      xy_color:
+      - 0.37
+      - 0.372
+      effect: none
+      friendly_name: Skrivebord 1
+      supported_features: 63
+      state: 'on'
+    light.spot_3_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 45
+      - 21.961
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      xy_color:
+      - 0.37
+      - 0.372
+      effect: none
+      friendly_name: Skrivebord 2
+      supported_features: 63
+      state: 'on'
+    light.spot_4_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 45
+      - 21.961
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      xy_color:
+      - 0.37
+      - 0.372
+      effect: none
+      friendly_name: Skrivebord 3
+      supported_features: 63
+      state: 'on'
+    light.spot_5_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 45
+      - 21.961
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      xy_color:
+      - 0.37
+      - 0.372
+      effect: none
+      friendly_name: Skrivebord 4
+      supported_features: 63
+      state: 'on'
+- id: '1614585778273'
+  name: Test
+  entities:
+    light.hue_color_spot_4:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 27.489
+      - 89.02
+      rgb_color:
+      - 255
+      - 131
+      - 27
+      xy_color:
+      - 0.602
+      - 0.374
+      effect: colorloop
+      friendly_name: Spot 1 Skrivebord
+      supported_features: 63
+      state: 'on'
+    light.hue_color_spot_5:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 335.769
+      - 81.569
+      rgb_color:
+      - 255
+      - 46
+      - 131
+      xy_color:
+      - 0.567
+      - 0.252
+      effect: colorloop
+      friendly_name: Spot 2 Skrivebord
+      supported_features: 63
+      state: 'on'
+    light.hue_color_spot_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 215.684
+      - 74.51
+      rgb_color:
+      - 64
+      - 142
+      - 255
+      xy_color:
+      - 0.16
+      - 0.164
+      effect: colorloop
+      friendly_name: Spot 3 Skrivebord
+      supported_features: 63
+      state: 'on'
+    light.hue_color_spot_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 93.474
+      - 74.51
+      rgb_color:
+      - 148
+      - 255
+      - 64
+      xy_color:
+      - 0.29
+      - 0.61
+      effect: colorloop
+      friendly_name: Spot 4 Skrivebord
+      supported_features: 63
+      state: 'on'
+    light.hue_color_spot_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 270.776
+      - 90.98
+      rgb_color:
+      - 142
+      - 23
+      - 255
+      xy_color:
+      - 0.235
+      - 0.089
+      effect: colorloop
+      friendly_name: Spot 5 Skrivebord
+      supported_features: 63
+      state: 'on'
+    switch.videolys_current_value:
+      friendly_name: 'Videolys: Current value'
+      state: 'on'
+- id: '1615056459121'
+  name: Se TV
+  entities:
+    light.stue_tak:
+      brightness: 3
+      friendly_name: Taklampe
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak1:
+      friendly_name: Tak 1
+      supported_features: 1
+      state: 'off'
+    light.light_kjk_2:
+      friendly_name: Tak 2
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak3:
+      friendly_name: Tak 3
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak4:
+      friendly_name: Tak 4
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak6:
+      brightness: 110
+      friendly_name: Tak 6
+      supported_features: 1
+      state: 'on'
+- id: '1615379211278'
+  name: Skru av Kjellerstue
+  entities:
+    light.spot_2_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Skrivebord 1
+      supported_features: 63
+      state: 'off'
+    light.spot_3_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Skrivebord 2
+      supported_features: 63
+      state: 'off'
+    light.spot_4_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Skrivebord 3
+      supported_features: 63
+      state: 'off'
+    light.spot_5_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Skrivebord 4
+      supported_features: 63
+      state: 'off'
+    light.kjellerstue_uplight:
+      friendly_name: Uplight
+      supported_features: 1
+      state: 'off'
+    switch.videolys_current_value:
+      friendly_name: 'Videolys: Current value'
+      state: 'off'
+- id: '1615380843688'
+  name: Kjøkken Omvendt L
+  entities:
+    light.kjokken_tak3:
+      brightness: 153
+      friendly_name: Tak 3
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak1:
+      brightness: 153
+      friendly_name: Tak 1
+      supported_features: 1
+      state: 'on'
+    light.light_kjk_2:
+      brightness: 153
+      friendly_name: Tak 2
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak4:
+      friendly_name: Tak 4
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak6:
+      brightness: 153
+      friendly_name: Tak 6
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak7:
+      brightness: 153
+      friendly_name: Tak 7
+      supported_features: 1
+      state: 'on'
+- id: '1615380917861'
+  name: Kjøkken AV
+  entities:
+    light.kjokken_tak1:
+      friendly_name: Tak 1
+      supported_features: 1
+      state: 'off'
+    light.light_kjk_2:
+      friendly_name: Tak 2
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak3:
+      friendly_name: Tak 3
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak4:
+      friendly_name: Tak 4
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak6:
+      friendly_name: Tak 6
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak7:
+      friendly_name: Tak 7
+      supported_features: 1
+      state: 'off'
+- id: '1615381899447'
+  name: Kjøkken Øst
+  entities:
+    light.kjokken_tak1:
+      brightness: 102
+      friendly_name: Tak 1
+      supported_features: 1
+      state: 'on'
+    light.light_kjk_2:
+      friendly_name: Tak 2
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak3:
+      brightness: 102
+      friendly_name: Tak 3
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak4:
+      friendly_name: Tak 4
+      supported_features: 1
+      state: 'off'
+    light.kjokken_tak6:
+      brightness: 102
+      friendly_name: Tak 6
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak7:
+      brightness: 82
+      friendly_name: Tak 7
+      supported_features: 1
+      state: 'on'
+- id: '1615382808225'
+  name: Alt på Kjøkken
+  entities:
+    light.kjokken_tak1:
+      brightness: 153
+      friendly_name: Tak 1
+      supported_features: 1
+      state: 'on'
+    light.light_kjk_2:
+      brightness: 153
+      friendly_name: Tak 2
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak3:
+      brightness: 153
+      friendly_name: Tak 3
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak4:
+      brightness: 153
+      friendly_name: Tak 4
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak6:
+      brightness: 153
+      friendly_name: Tak 6
+      supported_features: 1
+      state: 'on'
+    light.kjokken_tak7:
+      brightness: 153
+      friendly_name: Tak 7
+      supported_features: 1
+      state: 'on'
+- id: '1615383356197'
+  name: Stue Spise
+  entities:
+    light.stue_skjenk_hoyre:
+      brightness: 76
+      friendly_name: Skjenk Høyre
+      supported_features: 1
+      state: 'on'
+    light.stue_skjenk_venstre:
+      brightness: 76
+      friendly_name: Skjenk Venstre
+      supported_features: 1
+      state: 'on'
+    light.stue_stalampe:
+      brightness: 128
+      friendly_name: Stue Stålampe
+      supported_features: 1
+      state: 'on'
+    light.stue_tak:
+      brightness: 3
+      friendly_name: Taklampe
+      supported_features: 1
+      state: 'on'
+    light.stue_tv_benk:
+      brightness: 102
+      friendly_name: Stue TV-Benk
+      supported_features: 1
+      state: 'on'
+    light.stue_vindu1:
+      brightness: 102
+      friendly_name: Stue Vindu1
+      supported_features: 1
+      state: 'on'
+    light.stue_vindu2:
+      brightness: 102
+      friendly_name: Stue Vindu 2
+      supported_features: 1
+      state: 'on'
+    light.stue_spisestue:
+      brightness: 84
+      friendly_name: Stue Spisestue
+      supported_features: 1
+      state: 'on'
+- id: '1615383459216'
+  name: Stue se TV
+  entities:
+    light.stue_skjenk_hoyre:
+      brightness: 54
+      friendly_name: Skjenk Høyre
+      supported_features: 1
+      state: 'on'
+    light.stue_skjenk_venstre:
+      brightness: 54
+      friendly_name: Skjenk Venstre
+      supported_features: 1
+      state: 'on'
+    light.stue_spisestue:
+      friendly_name: Spisestue
+      supported_features: 1
+      state: 'off'
+    light.stue_stalampe:
+      brightness: 51
+      friendly_name: Stue Stålampe
+      supported_features: 1
+      state: 'on'
+    light.stue_tak:
+      brightness: 15
+      friendly_name: Taklampe
+      supported_features: 1
+      state: 'on'
+    light.stue_tv_benk:
+      brightness: 102
+      friendly_name: Stue TV-Benk
+      supported_features: 1
+      state: 'on'
+    light.stue_vindu1:
+      brightness: 102
+      friendly_name: Stue Vindu1
+      supported_features: 1
+      state: 'on'
+    light.stue_vindu2:
+      brightness: 102
+      friendly_name: Stue Vindu 2
+      supported_features: 1
+      state: 'on'
+- id: '1615383547269'
+  name: Stue alt AV
+  entities:
+    light.stue_skjenk_hoyre:
+      supported_color_modes:
+      - brightness
+      friendly_name: Skjenk Høyre
+      supported_features: 0
+      state: 'off'
+    light.stue_skjenk_venstre:
+      supported_color_modes:
+      - brightness
+      friendly_name: Skjenk Venstre
+      supported_features: 0
+      state: 'off'
+    light.stue_stalampe:
+      supported_color_modes:
+      - brightness
+      friendly_name: Stue Stålampe
+      supported_features: 0
+      state: 'off'
+    light.stue_tak:
+      supported_color_modes:
+      - brightness
+      friendly_name: Taklampe
+      supported_features: 0
+      state: 'off'
+    light.lys_vindu:
+      supported_color_modes:
+      - brightness
+      friendly_name: Lys Vindu
+      supported_features: 0
+      state: 'off'
+    light.spisestue_tak:
+      supported_color_modes:
+      - brightness
+      friendly_name: Spisestue Tak
+      supported_features: 0
+      state: 'off'
+  metadata: {}
+- id: '1615546027257'
+  name: Utelys BLÅ
+  entities:
+    light.spot_1_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 234.688
+      - 75.294
+      rgb_color:
+      - 63
+      - 79
+      - 255
+      xy_color:
+      - 0.158
+      - 0.087
+      effect: none
+      friendly_name: Ute Nord Trapp
+      supported_features: 63
+      state: 'on'
+- id: '1615546066800'
+  name: Utelys RØD 50
+  entities:
+    light.spot_1_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 100
+      hs_color:
+      - 3.243
+      - 87.059
+      rgb_color:
+      - 255
+      - 44
+      - 32
+      xy_color:
+      - 0.679
+      - 0.305
+      effect: none
+      friendly_name: Ute Nord Trapp
+      supported_features: 63
+      state: 'on'
+- id: '1615546138091'
+  name: Utelys AV
+  entities:
+    light.spot_1_skrivebord:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Ute Nord Trapp
+      supported_features: 63
+      state: 'off'
+    switch.utelys_front:
+      friendly_name: Utelys Front
+      state: 'off'
+    switch.ute_hage:
+      friendly_name: Utelys Hage
+      state: 'off'
+    switch.julelys_hage_2:
+      friendly_name: Julelys Hage
+      state: 'off'
+    switch.julelys_garasje_2:
+      friendly_name: Julelys Garasje
+      state: 'off'
+- id: '1615546372927'
+  name: Utelys Normal
+  entities:
+    light.spot_1_skrivebord:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 100
+      hs_color:
+      - 10.118
+      - 100
+      rgb_color:
+      - 255
+      - 43
+      - 0
+      xy_color:
+      - 0.6915
+      - 0.3083
+      effect: None
+      mode: normal
+      dynamics: none
+      friendly_name: Ute Nord Trapp
+      supported_features: 44
+      state: 'on'
+    switch.utelys_front:
+      friendly_name: Utelys Front
+      state: 'on'
+    switch.ute_hage:
+      friendly_name: Utelys Hage
+      state: 'on'
+  metadata: {}
+- id: '1615968613813'
+  name: Soverom Nede Dempet
+  entities:
+    light.marius_venstre:
+      brightness: 26
+      friendly_name: Marius Venstre
+      supported_features: 1
+      state: 'on'
+    light.marius_hoyre:
+      brightness: 26
+      friendly_name: Marius Høyre
+      supported_features: 1
+      state: 'on'
+- id: '1615968650971'
+  name: Soverom Nede PÅ
+  entities:
+    light.marius_venstre:
+      brightness: 255
+      friendly_name: Marius Venstre
+      supported_features: 1
+      state: 'on'
+    light.marius_hoyre:
+      brightness: 255
+      friendly_name: Marius Høyre
+      supported_features: 1
+      state: 'on'
+- id: '1615968674630'
+  name: Soverom Nede AV
+  entities:
+    light.marius_hoyre:
+      friendly_name: Marius Høyre
+      supported_features: 1
+      state: 'off'
+    light.marius_venstre:
+      friendly_name: Marius Venstre
+      supported_features: 1
+      state: 'off'
+- id: '1615968715524'
+  name: Soverom Nede Kun Høyre
+  entities:
+    light.marius_hoyre:
+      brightness: 102
+      friendly_name: Marius Høyre
+      supported_features: 1
+      state: 'on'
+    light.marius_venstre:
+      friendly_name: Marius Venstre
+      supported_features: 1
+      state: 'off'
+- id: '1672919767992'
+  name: Kontor AV
+  entities:
+    light.kontor_tak:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kontor.Tak
+      supported_features: 0
+      state: 'off'
+  metadata: {}
+- id: '1672919821615'
+  name: Kontor PÅ
+  entities:
+    light.kontor_tak:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kontor.Tak
+      supported_features: 0
+      color_mode: brightness
+      brightness: 171
+      state: 'on'
+  metadata: {}
+- id: '1672919852964'
+  name: Kontor NATT
+  entities:
+    light.kontor_tak:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kontor.Tak
+      supported_features: 0
+      color_mode: brightness
+      brightness: 23
+      state: 'on'
+  metadata: {}
